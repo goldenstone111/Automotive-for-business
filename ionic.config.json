@@ -1,5 +1,7 @@
 {
   "name": "AutoMotive_Business",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
