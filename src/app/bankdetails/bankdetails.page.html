@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>bankdetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="bankdetails">
+      <ion-row>
+        <ion-col size="12">
+          <h3>Add Bank Account.</h3>
+          <p>Please fill in all forms with your bank details</p>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Bank Account Number</ion-label>
+          <ion-input
+            type="tel"
+            formControlName="accountnumber"
+            placeholder="Enter Account Number"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Full Beneficiary Name</ion-label>
+          <ion-input
+            formControlName="beneficiaryname"
+            placeholder="Enter Beneficiary Name"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>ABA Number</ion-label>
+          <ion-input
+            type="tel"
+            formControlName="abanumber"
+            placeholder="Enter ABA Number"
+          >
+          </ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Bank Name</ion-label>
+          <ion-input formControlName="bankname" placeholder="Enter Bank Name">
+          </ion-input>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Bank Address</ion-label>
+          <ion-textarea
+            formControlName="bankaddress"
+            placeholder="Enter Bank Address"
+          >
+          </ion-textarea>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item class="checkboxitem">
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label> same as personal Address </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <hr />
+        </ion-col>
+        <ion-col>
+          <ion-label
+            >Upload supporting documents in which mention all above
+            details.</ion-label
+          >
+          <ion-row class="rowsection">
+            <ion-col size="6" class="ion-text-right">
+              <ion-button
+                mode="ios"
+                class="smallbtn"
+                shape="round"
+                fill="outline"
+                (click)="openCamera(1)"
+              >
+                <ion-icon name="camera" slot="start"></ion-icon>
+                Take Photo</ion-button
+              >
+            </ion-col>
+            <ion-col size="6">
+              <ion-button
+                mode="ios"
+                class="smallbtn"
+                shape="round"
+                fill="outline"
+                (click)="openCamera(2)"
+              >
+                <ion-icon name="image" slot="start"></ion-icon>
+                choose file</ion-button
+              >
+            </ion-col>
+            <ion-col size="12" *ngIf="bankdocuments.length>0">
+                <div *ngFor="let image of bankdocuments;  let i = index;"  class="kycimagediv">
+                  <img src={{image.url}} alt="">
+                  <ion-icon class="crossbtn" name="close" (click)="removeItem(i)"></ion-icon>
+                </div>
+              </ion-col>
+              <ion-col size="12">
+                <hr>
+              </ion-col>
+          </ion-row>
+        </ion-col>
+
+        <ion-col size="12" class="ion-text-center ion-no-padding">
+          <ion-button
+            
+            color="primary"
+            (click)="addbankdetails()"
+            shape="round"
+          >
+            <ion-ripple-effect></ion-ripple-effect> ADD BANK ACCOUNT
+          </ion-button>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center ion-no-padding">
+            <ion-button
+              (click)="skip()"
+              shape="round"
+              fill="clear"
+            >
+              <ion-ripple-effect></ion-ripple-effect> SKIP
+            </ion-button>
+          </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="signupForm">
+      <ion-row class="logo">
+        <ion-col offset="4" size="8" class="ion-text-center">
+          <div class="logodiv">
+            <img src="../../assets/shapes.svg" />
+          </div>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center headings">
+          <h3>
+            Welcome!
+          </h3>
+          <p>
+            Please enter your phone number for us to send a verification code.
+          </p>
+          <div>
+            <img style="height:15vw; margin: 3vw;" src="../../assets/Phone.svg" alt="" />
+          </div>
+        </ion-col>
+
+        <ion-col size="12" class="ion-text-center">
+          <ion-item class="input-structure" lines="none">
+            <ion-select
+              formControlName="countryform"
+              (ionChange)="setCountryCode(c)"
+             
+            >
+              <ion-select-option
+                *ngFor="let c of countries; let i = index"
+                [value]="i"
+              >
+                {{ c.name }}</ion-select-option
+              >
+            </ion-select>
+            <ion-label color="primary">{{ country.dial_code }}</ion-label>
+            <ion-input
+              placeholder="Phone Number"
+              formControlName="mobile"
+              maxLength="10"
+              type="tel"
+            ></ion-input>
+          </ion-item>
+          <div class="terms">
+            <ion-item lines="none">
+              <ion-checkbox
+                color="primary"
+                checked="false"
+                formControlName="terms"
+              ></ion-checkbox>
+            </ion-item>
+            <ion-item lines="none">
+              <p>
+                I hereby agree to the
+                <span routerLink="/" routerDirection="forward"
+                  >Terms & Conditions</span
+                >
+                and
+                <span routerLink="/" routerDirection="forward"
+                  >Privacy policy</span
+                >
+              </p>
+            </ion-item>
+          </div>
+
+          <div class=" error2">   
+            <ng-container *ngFor="let validation of validation_messages.countryform">
+              <div class="error-message" *ngIf="signupForm.get('countryform').hasError(validation.type) && (signupForm.get('countryform').dirty || signupForm.get('countryform').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+            <ng-container *ngFor="let validation of validation_messages.mobile">
+              <div class="error-message" *ngIf="signupForm.get('mobile').hasError(validation.type) && (signupForm.get('mobile').dirty || signupForm.get('mobile').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+            <ng-container *ngFor="let validation of validation_messages.terms">
+              <div class="error-message" *ngIf="signupForm.get('terms').hasError(validation.type) && (signupForm.get('terms').dirty || signupForm.get('terms').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+
+        </ion-col>
+        <ion-col size="12" class="ion-text-center headings">
+          <ion-button
+            [disabled]="!signupForm.valid"
+            class="authbtn"
+            (click)="register()"
+            routerDirection="forward"
+            [ngStyle]="{
+              'background-color': signupForm.valid
+                ? 'var(--theme-color)'
+                : 'var(--disbale-color)'
+            }"
+          >
+            <ion-ripple-effect></ion-ripple-effect> SIGN UP
+          </ion-button>
+        </ion-col>
+        <ion-col class="ion-text-center" *ngIf="!signupForm.valid">
+          <ion-label class="already">Already have an account? </ion-label
+          ><ion-button
+            fill="clear"
+            class="ion-no-margin ion-no-padding"
+            style="vertical-align: middle;"
+            routerLink="/login"
+            >Login</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
