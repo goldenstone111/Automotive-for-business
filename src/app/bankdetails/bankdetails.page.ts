@@ -16,11 +16,7 @@ import { Router } from "@angular/router";
 })
 export class BankdetailsPage implements OnInit {
   bankdetails: FormGroup;
-  bankdocuments = [
-    { url: '../../assets/shapes.svg'},
-    { url: '../../assets/Phone.svg'},
-    { url: '../../assets/phone1.svg'}
-  ];
+  bankdocuments = [];
   constructor(private formBuilder: FormBuilder, public router : Router, public camera: Camera) {}
 
   ngOnInit() {

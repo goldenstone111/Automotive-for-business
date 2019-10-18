@@ -21,21 +21,9 @@ export class CompleteprofilePage implements OnInit {
   isPicture=false;
   BusinessPicture:any;
   isBusinessPicture=false;
-  regcertificate=[ 
-    { url: '../../assets/shapes.svg'},
-    { url: '../../assets/Phone.svg'},
-    { url: '../../assets/phone1.svg'}
-  ];
-  licencenumber=[
-    { url: '../../assets/Phone.svg'},
-    { url: '../../assets/shapes.svg'},
-    { url: '../../assets/phone1.svg'}
-  ];
-  addressproof=[
-    { url: '../../assets/phone1.svg'},
-    { url: '../../assets/Phone.svg'},
-    { url: '../../assets/shapes.svg'}
-  ];
+  regcertificate=[];
+  licencenumber=[];
+  addressproof=[];
   step = 1;
   chooseOption:any;
   countries = [

@@ -1,0 +1,24 @@
+.photos{
+    width: 23vw;
+    height: 23vw;
+    padding: 2vw;
+    display: inline-flex;
+    position: relative;
+  
+    img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #6261614d; 
+        object-fit: cover;
+      }
+      .crossbtn {
+        position: absolute;
+        background: var(--font-color);
+        color: #fff;
+        border-radius: 50%;
+        right: 0.6vw;
+        top: 0vw;
+        font-size:5vw;
+      }
+    
+}

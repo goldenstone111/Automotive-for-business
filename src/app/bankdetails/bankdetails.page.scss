@@ -66,11 +66,12 @@ ion-grid {
     }
     .crossbtn {
       position: absolute;
-      background: var(--theme-color);
+      background: var(--font-color);
       color: #fff;
       border-radius: 50%;
-      right: 1vw;
+      right: 0.6vw;
       top: 0vw;
+      font-size:5vw;
     }
   }
 }

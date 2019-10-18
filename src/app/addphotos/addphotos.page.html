@@ -1,9 +1,44 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>addphotos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h3>Photo Gallery.</h3>
+        <p>Add photos to imporve your profile</p>
+      </ion-col>
+      <ion-col  size="12" class="ion-text-center ion-no-padding">
+        <div *ngFor="let image of storephotos;  let i = index;"  class="photos" >
+          <img  src={{image}} alt="" (click)="getImages()">
+          <ion-icon *ngIf="image" class="crossbtn" name="close" (click)="removeItem(i)"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col>
+          <ion-button
+          color="primary"
+          (click)="addbankdetails()"
+          shape="round"
+        >
+          <ion-ripple-effect></ion-ripple-effect> ADD PHOTOS
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center ion-no-padding">
+          <ion-button
+            (click)="skip()"
+            shape="round"
+            fill="clear"
+          >
+            <ion-ripple-effect></ion-ripple-effect> SKIP
+          </ion-button>
+        </ion-col>
+    </ion-row>
+    
+  </ion-grid>
 </ion-content>
