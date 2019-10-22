@@ -32,17 +32,17 @@ export class AddphotosPage implements OnInit {
 
   getImages() {
     this.options = {
-      width: 200,
-      quality: 25,
+      maximumImagesCount: 8,
+      quality: 50,
       outputType: 1
     };
-    this.storephotos = [];
+    
     this.imagePicker.getPictures(this.options).then((results) => {
       for (var i = 0; i < results.length; i++) {
         this.storephotos.push('data:image/jpeg;base64,' + results[i]);
       }
     }, (err) => {
-      alert(err);
+      console.log(err);
     });
   }
  

@@ -3,7 +3,6 @@
     <ion-buttons>
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>addphotos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,8 +19,9 @@
           <ion-icon *ngIf="image" class="crossbtn" name="close" (click)="removeItem(i)"></ion-icon>
         </div>
       </ion-col>
-      <ion-col>
-          <ion-button
+      <ion-col  size="12" class="ion-text-center ion-no-padding">
+          <ion-button style="margin-top: 10vw;"
+          mode="ios"
           color="primary"
           (click)="addbankdetails()"
           shape="round"
@@ -31,6 +31,7 @@
       </ion-col>
       <ion-col size="12" class="ion-text-center ion-no-padding">
           <ion-button
+            mode="ios"
             (click)="skip()"
             shape="round"
             fill="clear"
