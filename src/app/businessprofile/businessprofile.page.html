@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Business Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4"
+        ><div class="profilediv">
+          <img src="../../assets/shapes.svg" alt="" /></div
+      ></ion-col>
+      <ion-col size="6" class="ion-align-self-center">
+        <p class="heading">Navin Sharma</p>
+        <p class="heading">8952035898</p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button
+          fill="clear"
+          style="--padding-start: 0; --padding-end: 0;"
+          (click)="editBProfile()"
+        >
+          <ion-ripple-effect></ion-ripple-effect>
+          <img src="../../assets/edit.svg" style="width: 6vw;" alt="" />
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="data">
+      <ion-col size="12">
+        <h5>About Business</h5>
+        <span>Workshop at your doorstep.</span><br /><span
+          >We provide service bookers to We provide service bookers to bookers
+          to We provide service bookers to</span
+        >
+      </ion-col>
+      <ion-col size="12">
+        <h5>License No</h5>
+        <span>45565656544926</span>
+      </ion-col>
+      <ion-col size="12">
+        <h5>Address</h5>
+        <span>San Francisco ct540 </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

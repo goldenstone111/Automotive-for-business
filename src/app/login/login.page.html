@@ -28,14 +28,11 @@
 
         <ion-col size="12" class="ion-text-center">
           <ion-item class="input-structure" lines="none">
-            <ion-select
+            <ion-select 
               formControlName="countryform"
-              (ionChange)="setCountryCode(c)"
-              
             >
-              <ion-select-option
+              <ion-select-option selected
                 *ngFor="let c of countries; let i = index"
-                [value]="i"
               >
                 {{ c.name }}</ion-select-option
               >

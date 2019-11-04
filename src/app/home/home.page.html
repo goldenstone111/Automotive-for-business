@@ -1,14 +1,66 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-toolbar style="margin-top: 1vw;">
+  <ion-label style="padding-left: 3vw;" class="ion-text-left">Online</ion-label>   
+  <ion-toggle color="primary" slot="end"></ion-toggle>
+</ion-toolbar>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col size="12" class="ion-no-padding">
+        <div id="map_canvas" class="ion-no-padding"></div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="request-card">
+      <ion-col size="4" >
+       <div class="requestuserpic">
+         <img src="../../assets/shapes.svg" alt="">
+       </div>
+      </ion-col>
+      <ion-col size="8" >
+       <p class="name"> John Doe</p>
+       <div class="starsdiv"><img src="../../assets/stars.svg" alt=""> <ion-label>5.0</ion-label></div>
+       <ion-label class="servicetype">Service Requested : </ion-label><ion-label class="servicetype"> Car Wash</ion-label><br>
+       <ion-label class="address">450 W 31st St 11th Floor, New York</ion-label>
+      </ion-col>
+      <ion-col size="12">
+        <ion-row>
+          <ion-col size="8" class="ion-text-center">
+            <ion-button shape="round" expand="full" >
+              <ion-ripple-effect></ion-ripple-effect>
+              Accept
+            </ion-button>
+          </ion-col>
+          <ion-col size="4" class="ion-text-center">
+            <ion-button shape="round" expand="full" >
+              <ion-ripple-effect></ion-ripple-effect>
+              <img src="../../assets/home/close.svg"  style="width: 5.6vw;"alt="">
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-tab-bar slot="bottom">
+  <ion-tab-button routerLink="/services" >
+    <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="../../assets/home/services.svg" alt=""></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button routerLink="#">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-button shape="round"  fill="outline">
+      <ion-icon src="../../assets/home/ahomeicon.svg" alt=""></ion-icon>
+    </ion-button>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/profile" >
+    <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon style="font-size: 14vw;" src="../../assets/home/profile.svg" alt=""></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>

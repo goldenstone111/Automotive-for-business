@@ -1,0 +1,24 @@
+.heading{
+    margin-bottom: 15vw;;
+}
+.minepopup{
+    position: fixed;
+    top: 50%;
+    left: 8%;
+    padding: 4vw;
+    transform: translate(-4%, -50%);
+    background: white;
+    box-shadow: 0vw 0vw 0vw 100vw #0000003b;
+    border-radius: 6vw;
+    z-index: 999;
+    ion-select{
+        border: 1px solid var(--theme-color);
+        padding: 1vw 4vw;
+        border-radius: 4vw;
+        width: 19vw;
+        display: inline-flex;
+        margin: 0vw 1vw;
+        height: 9vw;
+        vertical-align: middle;
+    }
+}

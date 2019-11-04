@@ -11,6 +11,7 @@ export class OtpverifyPage implements OnInit {
   timer:any;
   timeLeft: number = 60;
   otpform: FormGroup;
+  obj:any={step:2};
   otpkey:any=[];
   constructor(private formBuilder: FormBuilder, public router : Router) {
     this.startTimer();
@@ -59,7 +60,9 @@ export class OtpverifyPage implements OnInit {
       this.otpkey=Object.values(this.otpform.value);
       console.log("otpkey", this.otpkey);
       if(this.otpkey===this.otpkey){
-        this.router.navigate(['/completeprofile']);
+        //this.router.navigate(['/completeprofile'], { step:1});
+        this.router.navigate(["/completeprofile",this.obj]);
+        
       }
     }
   }

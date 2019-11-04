@@ -11,6 +11,13 @@ const routes: Routes = [
   { path: 'completeprofile', loadChildren: './completeprofile/completeprofile.module#CompleteprofilePageModule' },
   { path: 'bankdetails', loadChildren: './bankdetails/bankdetails.module#BankdetailsPageModule' },
   { path: 'addphotos', loadChildren: './addphotos/addphotos.module#AddphotosPageModule' },
+  { path: 'deliverysetting', loadChildren: './deliverysetting/deliverysetting.module#DeliverysettingPageModule' },
+  { path: 'services', loadChildren: './services/services.module#ServicesPageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },  { path: 'order', loadChildren: './order/order.module#OrderPageModule' },
+  { path: 'bankaccounts', loadChildren: './bankaccounts/bankaccounts.module#BankaccountsPageModule' },
+  { path: 'businessprofile', loadChildren: './businessprofile/businessprofile.module#BusinessprofilePageModule' }
+
+
 ];
 
 @NgModule({

@@ -9,9 +9,34 @@
 <ion-content>
   <ion-grid>
     <ion-row>
+      <ion-col size="12" class="heading" >
+        <h3>Delivery Settings</h3>
+        <p>Set your delivery service charges.</p>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right" (click)="openmodal()" >
+       <ion-button fill="outline" shape="round">
+        <ion-ripple-effect></ion-ripple-effect>
+        &nbsp;Yes&nbsp;
+       </ion-button>
+      </ion-col>
+      <ion-col size="6" >
+        <ion-button fill="outline" shape="round" (click)="skip()">
+         <ion-ripple-effect></ion-ripple-effect>
+         &nbsp;No&nbsp;
+        </ion-button>
+       </ion-col>
+    </ion-row>
+    <ion-row class="minepopup" *ngIf="isAlert">
       <ion-col size="12">
-        <h3>Photo Gallery.</h3>
-        <p>Add photos to imporve your profile</p>
+        <h3>Delivery Settings</h3>
+        <p>Offer <ion-select><ion-select-option *ngFor="let m of miles; let i = index">{{i+1}}</ion-select-option></ion-select>miles as free service</p>
+        <p>After that charge<ion-select><ion-select-option *ngFor="let c of charge; let i = index"> ${{i+1}}</ion-select-option></ion-select> per mile.</p>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center" style="margin-top: 6vw;;">
+        <ion-button  shape="round" (click)="saveOffer()">
+          <ion-ripple-effect></ion-ripple-effect>
+          &nbsp;DONE&nbsp;
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

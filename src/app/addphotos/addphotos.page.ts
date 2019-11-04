@@ -45,5 +45,10 @@ export class AddphotosPage implements OnInit {
       console.log(err);
     });
   }
- 
+  skip(){
+    this.router.navigate(['/deliverysetting']);
+  }
+ savePhotos(){
+  this.router.navigate(['/deliverysetting']);
+ }
 }

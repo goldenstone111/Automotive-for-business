@@ -6,6 +6,7 @@ import {
   FormControl,
   Validators
 } from "@angular/forms";
+import { ActivatedRoute } from '@angular/router';
 import { Router } from "@angular/router";
 import { ActionSheetController } from '@ionic/angular';
 import { Camera, CameraOptions } from "@ionic-native/camera/ngx"; 
@@ -76,7 +77,19 @@ export class CompleteprofilePage implements OnInit {
   selectHeader:any={
     header:"Select One"
   }
-  constructor(public actionSheetController : ActionSheetController, public camera : Camera ,private formBuilder: FormBuilder, public router: Router) {}
+  constructor(private route: ActivatedRoute, public actionSheetController : ActionSheetController, public camera : Camera ,private formBuilder: FormBuilder, public router: Router) {
+    // // this.route.queryParamMap.subscribe((params:any) => {
+    // //   this.step = params.params.step;
+    // //   console.log("step is : ",params );
+      
+    // });
+    this.step = this.route.snapshot.params.step;
+    console.log(this.route.snapshot.params);
+    
+    console.log(this.step);
+
+
+  }
 
   ngOnInit() {
     this.profiledetail = this.formBuilder.group({

@@ -1,0 +1,33 @@
+.profilediv{
+    width: 30vw;
+    height: 30vw;   
+    padding:1vw;
+    img{
+        width:100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+       
+    }
+}
+
+ion-row{
+    .userinfo{
+        padding-top: 17vw;
+    }
+
+    .icon{
+
+        padding-top: 17vw;
+        margin-left: 5vw;
+    }
+}
+
+.data{
+    padding: 0vw 5vw;
+
+}
+
+span{
+    font-size: 3.5vw;
+}

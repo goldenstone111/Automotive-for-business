@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size='12'>
+        <div class="heading">
+          <h4>Select and updates services prices</h4>
+          <p> Please select the service you provide and update service prices</p>
+        </div>
+
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+      <ion-col size='12'>
+        <div class="heading">
+          <ion-list>
+            <ion-item  *ngFor='let carinfo of carsinfo' lines="none">
+              <ion-checkbox color="primary" slot="start"></ion-checkbox>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>
+                    <p id="cics"> Car Wash</p>
+                  </ion-card-subtitle>
+                  <ion-card-title>
+                    <p id="cict">Update Price</p>
+                      
+                  </ion-card-title>
+                  <ion-card-title>
+                     <span >
+                        <ion-select class="customsmallselect">
+                          <ion-select-option *ngFor='let p of price; let i=index;'  selected>$ {{i+1}}</ion-select-option>
+                        </ion-select>
+                      </span>
+                    </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <p id="cicc">Note: An amount of $2 will be added service fee in the updated price</p>
+                </ion-card-content>
+              </ion-card>
+
+            </ion-item>
+          </ion-list>
+
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offset="3" size="6" >
+      <ion-button (click)="updateService()" shape="round" expand="full">
+        <ion-ripple-effect></ion-ripple-effect>
+        Done
+      </ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-tab-bar slot="bottom">
+    <ion-tab-button >
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon src="../../assets/home/aservices.svg" alt=""></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/home">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-button shape="round" color="medium" fill="outline">
+        <ion-icon src="../../assets/home/homeicon.svg" alt=""></ion-icon>
+      </ion-button>
+    </ion-tab-button>
+    <ion-tab-button  routerLink="/profile" >
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon style="font-size: 14vw;" src="../../assets/home/profile.svg" alt=""></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>

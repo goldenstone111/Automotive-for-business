@@ -1,1 +1,45 @@
-
+#map_canvas {
+    width: 100%;
+    height: -webkit-fill-available;
+    border: 1px solid #6261612b;
+  }
+.request-card{
+    position: absolute;
+    bottom: 0;
+    margin: 0vw 5vw;
+    border: 1px solid #6261612b;
+    padding: 4vw;
+    .requestuserpic{
+        height: 25vw;
+        width: 25vw;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+    }
+    .name{
+        font-weight: 600;
+        margin: 0;
+        font-size: 4.5vw;
+    }
+    .starsdiv{
+        font-size: 3.5vw;
+        img{
+            width: 17vw;
+        }
+    }
+    .servicetype{
+        font-size: 3.4vw;
+        font-weight: 600;
+    }
+    .address{
+        font-size: 3.4vw;
+    }
+    ion-button{
+        font-size: 5.2vw;
+        font-weight: 400;
+    }
+}
